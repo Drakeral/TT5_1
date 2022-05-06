@@ -24,6 +24,14 @@ const NavBar = (props:any) => {
                                     {/* <a className="nav-link" href="#">Link</a> */}
                                     <Link to={"/login"}><div className="nav-link active">Login</div></Link>
                                 </li>
+                                <li className="nav-item">
+                                    {/* <a className="nav-link" href="#">Link</a> */}
+                                    <Link to={"/home"}><div className="nav-link active">Home</div></Link>
+                                </li>
+                                <li className="nav-item">
+                                    {/* <a className="nav-link" href="#">Link</a> */}
+                                    <Link to={"/projectoverview"}><div className="nav-link active">ProjectOverview</div></Link>
+                                </li>
                             
 
                             
