@@ -8,6 +8,7 @@ import {
   CardTitle,
 } from "reactstrap";
 import Button from 'react-bootstrap/Button';
+import axios from 'axios';
 
 class ProjectOverview extends Component {
     constructor(props) {
@@ -16,27 +17,19 @@ class ProjectOverview extends Component {
       this.state = {};
     }
 
-  //   componentDidMount() {
-  //     fetch('https://some-api.com/harry-potter')
-  //     .then((response) => response.json())
-  //     .then(booksList => {
-  //         this.setState({ books: booksList });
-  //     });
-  // }
-
     render() {
-      const projects = this.props.projects.map((proj) => {
+      const projects = this.props.projects.map((projectInfo) => {
         return (
-          <div key={proj.id} className="col-12 col-md-5 m-1">
+          <div key={projectInfo.id} className="col-12 col-md-5 m-1">
           <Card>
-              <CardTitle> {proj.name} </CardTitle>
-              <CardBody>{proj.description}</CardBody>
+              <CardTitle> {projectInfo.name} </CardTitle>
+              <CardBody>{projectInfo.description}</CardBody>
               <Button variant="primary">Details</Button>
           </Card>
         </div>
         );
       });
-  
+
       return (
         //return the view for this component
         //able to make use of javascript variables in jsx
