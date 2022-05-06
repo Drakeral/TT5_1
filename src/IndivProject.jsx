@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Component, useState, useEffect } from 'react';
 import 'antd/dist/antd.css';
 import './index.css';
-import { Alert, List, Divider, Skeleton, Typography, Button } from 'antd';
+import { Alert, List, Divider, Skeleton, Typography, Button, Row, Col} from 'antd';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { EditOutlined, DeleteOutlined, PlusOutlined} from '@ant-design/icons';
 
@@ -61,10 +61,10 @@ const IndivProject = (props) => {
     //     })
     // }
 
-    const editExpenses = async (props) => {
-        console.log("edit")
+    const editExpenses = async (id) => {
+        console.log("edit", id)
         // await axios.post(`/project-update`, {}, {params: {
-        //     project: props.project_id,
+        //     project: id,
         // }})
         // .then(res => {
         //     console.log("success")
@@ -75,12 +75,32 @@ const IndivProject = (props) => {
         // })
     }
 
-    const deleteExpenses = () => {
+    const deleteExpenses = () => { 
         console.log("delete")
+        // await axios.delete(`/project-delete`, {}, {params: {
+        //     project: id,
+        // }})
+        // .then(res => {
+        //     console.log("success")
+        // })
+        // .catch(error => {
+        //     setError(true)
+        //     console.log(error)
+        // })
     }
 
-    const addExpenses = () => {
+    const addExpenses = () => { 
         console.log("add")
+        // await axios.post(`/project-add`, {}, {params: {
+        //     project: id,
+        // }})
+        // .then(res => {
+        //     console.log("success")
+        // })
+        // .catch(error => {
+        //     setError(true)
+        //     console.log(error)
+        // })
     }
 
 
@@ -91,7 +111,6 @@ const IndivProject = (props) => {
         {err_1 ? 
         <Alert message="Something's Wrong..." type="warning" />: null }
 
-
         {/* <div className="list-group">
 
             {exp.length!==0 ? 
@@ -100,8 +119,6 @@ const IndivProject = (props) => {
             return (
             <div>
             <div className="list-group-item list-group-item-info">
-
-                
             <div className="container">
          
             <div className="row">
@@ -137,25 +154,21 @@ const IndivProject = (props) => {
             <div className="col">
             <i className="bi bi-trash-fill"></i>
             </div>
-
-
-
             </div>
             <br></br>
             </div> 
 
         )}): null} 
-
-
-
         </div>*/}
 
         <List
             itemLayout="horizontal"
             dataSource={exp}
+            style={{'backgroundColor': '#fff'}}
             renderItem={item => (
-            <List.Item style={{ color: '#000' }}>
+            <List.Item >
                 <List.Item.Meta
+                style={{width:"50%"}}
                 title={
                     <>
                     <h5 className="mb-1">{item.name}</h5>
@@ -170,10 +183,17 @@ const IndivProject = (props) => {
                     </>
                     }
                 />
-
+               <Row justify="space-evenly">
+                <Col span={4} style={{width:"200px"}}>
                 {item.amount}
-                <Button type="primary" shape="circle" icon={<EditOutlined />} onClick={editExpenses} />
-                <Button type="primary" shape="circle" icon={<DeleteOutlined />}onClick={deleteExpenses}/>
+                </Col>
+                <Col span={4}>
+                <Button type="primary" shape="circle" icon={<EditOutlined />} onClick={() => editExpenses(item.id)} />
+                </Col>
+                <Col span={4}>
+                <Button type="primary" shape="circle" icon={<DeleteOutlined />}onClick={() => deleteExpenses(item.id)}/>
+                </Col>
+                </Row>
             </List.Item>
             )}
         />
