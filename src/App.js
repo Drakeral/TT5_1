@@ -1,58 +1,44 @@
-import Card from "./components/Card";
-import Container from "react-bootstrap/Container";
-import { Stack } from "react-bootstrap";
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-function App() {
-  // const [showAddBudgetModal, setShowAddBudgetModal] = useState(false);
-  // const [showAddExpenseModal, setShowAddExpenseModal] = useState(false);
-  // const { budgets, getBudgetExpenses } = useBudgets();
-  // const [expense, setExpense] = useState([
-  //   {
-  //     id: 1,
-  //     project_id: 2,
-  //     category_id: 2,
-  //     name: "Server Maintenance",
-  //     description:
-  //       "Server maintenance and upgrading work to incorporate BC plans",
-  //     amount: 30000,
-  //     created_at: "2021-11-04T16:00:00.000Z",
-  //     created_by: "Jacky",
-  //     updated_at: "2021-11-06T16:00:00.000Z",
-  //     updated_by: "Jacky",
-  //   },
-  //   {
-  //     id: 2,
-  //     project_id: 3,
-  //     category_id: 4,
-  //     name: "Consultant",
-  //     description: "Consultancy services for integration work",
-  //     amount: 10000,
-  //     created_at: "2021-11-06T16:00:00.000Z",
-  //     created_by: "Helen",
-  //     updated_at: "2021-11-07T16:00:00.000Z",
-  //     updated_by: "Helen",
-  //   },
-  // ]);
+import { AppProvider } from "./context/AppContext";
+import Budget from "./components/Budget";
+import ExpenseTotal from "./components/ExpenseTotal";
+import ExpenseList from "./components/ExpenseList";
+import AddExpenseForm from "./components/AddExpenseForm";
+import RemainingBudget from "./components/Remaining";
+
+const App = () => {
   return (
-    <Container className="my-4">
-      <Stack direction="horizontal" gap="2" className="mb-4">
-        <h1 className="me-auto">Project 1</h1>
-      </Stack>
-
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
-          gap: "1rem",
-          alignItems: "flex-start",
-        }}
-      >
-        <Card name="Expense 1"></Card>
-        <Card name="Expense 2"></Card>
-        <Card name="Expense 3"></Card>
+    <AppProvider>
+      <div className="container">
+        <h1 className="mt-3">Project 1</h1>
       </div>
-    </Container>
+      <h3 className="mt-3">Expenses</h3>
+      <div className="row ">
+        <div className="col-sm">
+          <ExpenseList />
+        </div>
+      </div>
+      <h3 className="mt-3">Add Expense</h3>
+      <div className="row mt-3">
+        <div className="col-sm">
+          <AddExpenseForm />
+        </div>
+      </div>
+      <div className="row mt-3">
+        <div className="col-sm">
+          <Budget />
+          <div className="col-sm">
+            <RemainingBudget />
+          </div>
+          <div className="col-sm">
+            <ExpenseTotal />
+          </div>
+        </div>
+      </div>
+    </AppProvider>
   );
-}
+};
 
 export default App;
