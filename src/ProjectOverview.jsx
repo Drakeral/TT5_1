@@ -22,8 +22,8 @@ class ProjectOverview extends Component {
         return (
           <div key={projectInfo.id} className="col-12 col-md-5 m-1">
           <Card>
-              <CardTitle> {projectInfo.name} </CardTitle>
-              <CardBody>{projectInfo.description}</CardBody>
+              <CardTitle> Project Name: {projectInfo.name} </CardTitle>
+              <CardBody>Project Description: {projectInfo.description}</CardBody>
               <Button variant="primary">Details</Button>
           </Card>
         </div>
@@ -34,11 +34,12 @@ class ProjectOverview extends Component {
         //return the view for this component
         //able to make use of javascript variables in jsx
         <div>
+          <h1>Project Overview</h1>
           <div>{projects}</div>
         </div>
       );
     }
   }
   
-  export default ProjectOverview;
+export default ProjectOverview;
   

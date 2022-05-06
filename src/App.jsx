@@ -2,7 +2,7 @@ import React from 'react';
 import { Component } from "react";
 import logo from './logo.svg';
 import './App.css';
-// import { project } from "./project.js";
+import { project } from "./project.js";
 import ProjectOverview from "./ProjectOverview";
 import axios from 'axios';
 
@@ -11,7 +11,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      projects: [],
+      projects: project,
     };
   }
 
