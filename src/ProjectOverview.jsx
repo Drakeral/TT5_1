@@ -1,5 +1,13 @@
 import React, { Component } from "react";
-
+import {
+  Card,
+  CardImg,
+  CardImgOverlay,
+  CardText,
+  CardBody,
+  CardTitle,
+} from "reactstrap";
+import Button from 'react-bootstrap/Button';
 
 class ProjectOverview extends Component {
     constructor(props) {
@@ -19,23 +27,21 @@ class ProjectOverview extends Component {
     render() {
       const projects = this.props.projects.map((proj) => {
         return (
-          <div key={proj.id}>
-            <div style="width: 18rem;">
-              <div>
-                <h5>{proj.name}</h5>
-                <p>{proj.description}</p>
-                <a href="#">Detailed View</a>
-                </div>
-            </div>
-          </div>
+          <div key={proj.id} className="col-12 col-md-5 m-1">
+          <Card>
+              <CardTitle> {proj.name} </CardTitle>
+              <CardBody>{proj.description}</CardBody>
+              <Button variant="primary">Details</Button>
+          </Card>
+        </div>
         );
       });
   
       return (
         //return the view for this component
         //able to make use of javascript variables in jsx
-        <div >
-          <div >{projects}</div>
+        <div>
+          <div>{projects}</div>
         </div>
       );
     }
