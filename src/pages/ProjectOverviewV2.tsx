@@ -16,7 +16,7 @@ const ProfilePage = () => {
 
   return (
     <NavBar>
-      <div className="container text-center">This is the Profile Page</div>
+      <div className="container text-center">This is the Project Overview Page</div>
       <div className="container">
         <div className="row align-items-start">
         <div className="col text-center">
@@ -29,6 +29,35 @@ const ProfilePage = () => {
             Expense = {name.description}
           </div>
         </div>
+        
+      </div>
+      <div className="container">
+        <div className="row align-items-start">
+        <div className="col text-center">
+            Description = {name.budget}
+          </div>
+          <div className="col text-center">
+            Expense = {name.name}
+          </div>
+          <div className="col text-center">
+            Expense = {name.description}
+          </div>
+        </div>
+        
+      </div>
+      <div className="container">
+        <div className="row align-items-start">
+        <div className="col text-center">
+            Description = {name.budget}
+          </div>
+          <div className="col text-center">
+            Expense = {name.name}
+          </div>
+          <div className="col text-center">
+            Expense = {name.description}
+          </div>
+        </div>
+        
       </div>
     </NavBar>
   )
