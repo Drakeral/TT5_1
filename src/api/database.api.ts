@@ -14,7 +14,7 @@ export const getProfileInfo = async () => {
     });
 };
 
-export const sendLoginInfo = (url: string, fetch_body: string, setIsLoading: any, authCtx: any, history: any) => {
+export const sendLoginInfo = (url: string, fetch_body: string, setIsLoading: any, history: any) => {
     return fetch(
         url,
         {
@@ -41,7 +41,7 @@ export const sendLoginInfo = (url: string, fetch_body: string, setIsLoading: any
         const expirationTime = new Date(
             new Date().getTime() + (+data.expiresIn * 1000)
         );
-        authCtx.login(data.idToken, expirationTime.toISOString());
+        // authCtx.login(data.idToken, expirationTime.toISOString());
         history.replace('/');
     })
         .catch(err => {

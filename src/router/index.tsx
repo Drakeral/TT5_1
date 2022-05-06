@@ -14,7 +14,7 @@ const Routers = () => {
           <Route path="/login" component={LoginPage} />
           <Route path="/projectoverview" component={ProjectOverview} />
           <Route path="/profile" component={ProfilePage} />
-          <Route path="/projectindividual" component={ProjectIndividual} />
+          {/* <Route path="/projectindividual" component={ProjectIndividual} /> */}
           <Route path="/" component={HomePage}/>
       </Switch>
     </Router>

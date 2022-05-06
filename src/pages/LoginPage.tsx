@@ -14,15 +14,15 @@ const LoginPage = () => {
   const submitHandler = (event: any) => {
     event.preventDefault();
 
-    const url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyA-cxIpoA7wjp3jc5SWRHyLxCo9Q7-w2ck';
+    const url = 'https://test-1234567533.herokuapp.com/user/login';
     const fetch_body = JSON.stringify({
-      email: loginValues.email,
+      username: loginValues.email,
       password: loginValues.password,
       returnSecureToken: true
     })
     setIsLoading(true);
-
-    // sendLoginInfo(url, fetch_body, setIsLoading, history)
+    console.log("login success")
+    sendLoginInfo(url, fetch_body, setIsLoading, history)
 
   };
 
@@ -37,7 +37,7 @@ const LoginPage = () => {
               onChange={(event) => {
                 setLoginValues({ ...loginValues, email: event.target.value })
               }}
-              type="email"
+              type="text"
               className="form-control"
               name="email"
               placeholder="What's your email?"
