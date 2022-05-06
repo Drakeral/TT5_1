@@ -155,7 +155,7 @@ const IndivProject = (props) => {
         <div>
 
         {err_1 ? 
-        <Alert message="Something's Wrong..." type="warning" />: null }
+        <Alert closable message="Something's Wrong..." type="error" />: null }
 
         <h1>Project No: 1 {/* props.project_id  */}</h1>
         <h1>Total Number of Expenses: {exp.length!==0 ? exp.length : 0}</h1>
