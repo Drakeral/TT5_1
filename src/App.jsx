@@ -2,7 +2,7 @@ import React from 'react';
 import { Component } from "react";
 import logo from './logo.svg';
 import './App.css';
-import { project } from "./constants/project.js";
+import { project } from "./pages/project.js";
 import ProjectOverview from "./pages/ProjectOverview";
 
 class App extends Component {

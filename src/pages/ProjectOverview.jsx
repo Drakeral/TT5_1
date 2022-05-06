@@ -25,6 +25,24 @@ class ProjectOverview extends Component {
   //     });
   // }
 
+  // const projectInfo = async () => {
+  //   await axios.get(`/project-get`, {}, {
+  //     params: {
+  //       id: props.id,
+  //       name: props.name,
+  //       description: props.description,
+  //     }
+  //   })
+  //     .then(res => {
+  //       setExp(res.data)
+  //       console.log("success")
+  //     })
+  //     .catch(error => {
+  //       setError(true)
+  //       console.log(error)
+  //     })
+  // }
+
     render() {
       const projects = this.props.projects.map((proj) => {
         return (
@@ -48,6 +66,22 @@ class ProjectOverview extends Component {
         </NavBar>
       );
     }
+
+
+
+
+    // const submitHandler = (event: any) => {
+    //   event.preventDefault();
+    //   axios.post(back_url, body, {
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     }
+    //   }
+    //   ).then(res => {
+    //     history.replace('/');
+    //   })
+    // }
+
   }
   
   export default ProjectOverview;

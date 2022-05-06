@@ -1,11 +1,18 @@
 import {useContext} from 'react'
 import {Link, useHistory} from 'react-router-dom';
-// import AuthContext from '../../store/auth-context';
+import AuthContext from '../../store/auth-context';
 
 const NavBar = (props:any) => {
 
-    const logoutHandler = () => {
+    const history = useHistory();
+    const authCtx = useContext(AuthContext);	
+    const isLoggedIn = authCtx.isLoggedIn;
 
+    const logoutHandler = () => {
+            // Call the logout function in authCtx to reset the token into an empty string
+            authCtx.logout();
+            // Redirect the user
+            history.replace('/login');
     }
 
     return (
@@ -32,6 +39,24 @@ const NavBar = (props:any) => {
                                     {/* <a className="nav-link" href="#">Link</a> */}
                                     <Link to={"/projectoverview"}><div className="nav-link active">ProjectOverview</div></Link>
                                 </li>
+                                <li className="nav-item dropdown">
+                                   
+                                    <Link to={"/profile"}><div className="nav-link active">Profile</div></Link>
+                                </li>
+                                {/* {isProject1 && ( */}
+                                {/* )} */}
+                                {/* {isProject2 && ( */}
+                                <li className="nav-item">
+                                    {/* <a className="nav-link" href="#">Link</a> */}
+                                    <Link to={"/projectindividual"}><div className="nav-link active">ProjectIndividual2</div></Link>
+                                </li>
+                                {/* )} */}
+                                {/* {isProject3 && ( */}
+                                <li className="nav-item">
+                                    {/* <a className="nav-link" href="#">Link</a> */}
+                                    <Link to={"/projectindividual"}><div className="nav-link active">ProjectIndividual3</div></Link>
+                                </li>
+                                {/* )} */}
                             
 
                             
