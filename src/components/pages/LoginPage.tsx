@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import classes from '../components/Auth/AuthForm.module.css';
 
 const LoginPage = () => {
   
@@ -7,11 +8,11 @@ const LoginPage = () => {
     };
   
     return (
-        <section>
+        <section className={classes.auth}>
             <h1>LoginPage</h1>
 
             <form onSubmit={submitHandler}>
-                <div>
+                <div className={classes.control}>
                     <label htmlFor='email'>Your Email</label>
                     <input
                         onChange={() => {
@@ -24,7 +25,7 @@ const LoginPage = () => {
                         // value={}
                     />
                 </div>
-                <div>
+                <div className={classes.control}>
                     <label htmlFor='password'>Your Password</label>
                     <input
                         onChange={() => {
