@@ -31,41 +31,34 @@ const NavBar = (props:any) => {
                                     {/* <a className="nav-link" href="#">Link</a> */}
                                     <Link to={"/login"}><div className="nav-link active">Login</div></Link>
                                 </li>
-                                <li className="nav-item">
-                                    {/* <a className="nav-link" href="#">Link</a> */}
-                                    <Link to={"/home"}><div className="nav-link active">Home</div></Link>
-                                </li>
+                               
                                 <li className="nav-item">
                                     {/* <a className="nav-link" href="#">Link</a> */}
                                     <Link to={"/projectoverview"}><div className="nav-link active">ProjectOverview</div></Link>
                                 </li>
-                                <li className="nav-item dropdown">
+                                {/* <li className="nav-item dropdown">
                                    
                                     <Link to={"/profile"}><div className="nav-link active">Profile</div></Link>
-                                </li>
+                                </li> */}
                                 {/* {isProject1 && ( */}
                                 {/* )} */}
                                 {/* {isProject2 && ( */}
                                 <li className="nav-item">
                                     {/* <a className="nav-link" href="#">Link</a> */}
-                                    <Link to={"/projectindividual"}><div className="nav-link active">ProjectIndividual2</div></Link>
+                                    <Link to={"/projectindividual"}><div className="nav-link active">ProjectIndividual</div></Link>
                                 </li>
                                 {/* )} */}
                                 {/* {isProject3 && ( */}
-                                <li className="nav-item">
-                                    {/* <a className="nav-link" href="#">Link</a> */}
-                                    <Link to={"/projectindividual"}><div className="nav-link active">ProjectIndividual3</div></Link>
-                                </li>
-                                {/* )} */}
+                               
                             
 
                             
 
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <a className="nav-link" href="#">Link</a>
-                            </li>
+                            </li> */}
 
-                            <li className="nav-item dropdown">
+                            {/* <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Dropdown
                                 </a>
@@ -75,14 +68,14 @@ const NavBar = (props:any) => {
                                     <li><hr className="dropdown-divider" /></li>
                                     <li><a className="dropdown-item" href="#">Something else here</a></li>
                                 </ul>
-                            </li>
+                            </li> */}
 
                         </ul>
 
-                        <form className="d-flex">
+                        {/* <form className="d-flex">
                             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                             <button className="btn btn-outline-success" type="submit">Search</button>
-                        </form>
+                        </form> */}
                     </div>
                 </div>
             </nav>

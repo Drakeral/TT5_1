@@ -4,6 +4,15 @@ import logo from './logo.svg';
 import './App.css';
 import { project } from "./pages/project.js";
 import ProjectOverview from "./pages/ProjectOverview";
+import ProjectIndividual from './pages/ProjectIndividual';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import LoginPage from './pages/LoginPage';
+
 
 class App extends Component {
   constructor(props) {
@@ -16,7 +25,26 @@ class App extends Component {
     render() {
       return (
       <div className="App">
-        <ProjectOverview projects={this.state.projects} />
+
+        <Router>
+        <div>
+          
+          {/* A <Switch> looks through its children <Route>s and
+              renders the first one that matches the current URL. */}
+          <Switch>
+          
+            <Route path="/login">
+              <LoginPage />
+            </Route>
+            <Route path="/projectindividual">
+              <ProjectIndividual />
+            </Route>
+            <Route path="/projectoverview">
+               <ProjectOverview projects={this.state.projects} /> 
+            </Route>
+          </Switch>
+        </div>
+      </Router>
       </div>
     );
   }

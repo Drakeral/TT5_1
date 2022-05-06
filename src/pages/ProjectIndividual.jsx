@@ -3,7 +3,6 @@ import NavBar from '../components/NavBar'
 import axios from 'axios';
 import { Component, useState, useEffect } from 'react';
 import 'antd/dist/antd.css';
-import './index.css';
 import { Alert, List, Divider, Skeleton, Typography, Button, Row, Col, Modal, Input} from 'antd';
 import { EditOutlined, DeleteOutlined, PlusOutlined} from '@ant-design/icons';
 
@@ -243,7 +242,9 @@ const ProjectIndividual = (props) => {
                     <Divider style={{'backgroundColor': '#000' }} type="vertical" />
                     <Text style={{ color: '#000' }}>{item.created_at}</Text>
 
-                    <h5 className="mb-1">{item.description}</h5>
+                    <br></br>
+
+                    <Text className="mb-1">{item.description}</Text>
 
             
                     </>
