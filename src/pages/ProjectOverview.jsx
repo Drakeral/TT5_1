@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "reactstrap";
 import Button from 'react-bootstrap/Button';
-import NavBar from '../components/NavBar';
+import axios from 'axios';
 
 class ProjectOverview extends Component {
     constructor(props) {
@@ -17,72 +17,29 @@ class ProjectOverview extends Component {
       this.state = {};
     }
 
-  //   componentDidMount() {
-  //     fetch('https://some-api.com/harry-potter')
-  //     .then((response) => response.json())
-  //     .then(booksList => {
-  //         this.setState({ books: booksList });
-  //     });
-  // }
-
-  // const projectInfo = async () => {
-  //   await axios.get(`/project-get`, {}, {
-  //     params: {
-  //       id: props.id,
-  //       name: props.name,
-  //       description: props.description,
-  //     }
-  //   })
-  //     .then(res => {
-  //       setExp(res.data)
-  //       console.log("success")
-  //     })
-  //     .catch(error => {
-  //       setError(true)
-  //       console.log(error)
-  //     })
-  // }
-
     render() {
-      const projects = this.props.projects.map((proj) => {
+      const projects = this.props.projects.map((projectInfo) => {
         return (
-          <div key={proj.id} className="col-12 col-md-5 m-1">
+          <div key={projectInfo.id} className="col-12 col-md-5 m-1">
           <Card>
-              <CardTitle> {proj.name} </CardTitle>
-              <CardBody>{proj.description}</CardBody>
+              <CardTitle> Project Name: {projectInfo.name} </CardTitle>
+              <CardBody>Project Description: {projectInfo.description}</CardBody>
               <Button variant="primary">Details</Button>
           </Card>
         </div>
         );
       });
-  
+
       return (
         //return the view for this component
         //able to make use of javascript variables in jsx
-        <NavBar>
         <div>
+          <h1>Project Overview</h1>
           <div>{projects}</div>
         </div>
-        </NavBar>
       );
     }
-
-
-
-
-    // const submitHandler = (event: any) => {
-    //   event.preventDefault();
-    //   axios.post(back_url, body, {
-    //     headers: {
-    //       'Content-Type': 'application/json'
-    //     }
-    //   }
-    //   ).then(res => {
-    //     history.replace('/');
-    //   })
-    // }
-
   }
   
-  export default ProjectOverview;
+export default ProjectOverview;
   
