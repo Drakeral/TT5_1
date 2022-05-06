@@ -1,7 +1,9 @@
 import {useState, useContext} from 'react';
 import { useHistory } from 'react-router-dom';
-
+// import NavBar from '../components/NavBar';
 import classes from '../components/Auth/AuthForm.module.css';
+// import AuthContext from '../store/auth-context';
+// import { sendLoginInfo } from '../api/database.api';
 import { ILoginProps, loginForm } from '../constants/profile.constants';
 
 const LoginPage = () => {
